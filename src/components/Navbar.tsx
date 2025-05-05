@@ -5,11 +5,11 @@ import { Input } from "@/components/ui/input";
 import { useToast } from "@/components/ui/use-toast";
 import { Search, User, Menu, X } from "lucide-react";
 import { useState } from "react";
-import useMobile from "@/hooks/use-mobile";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const isMobile = useMobile();
+  const isMobile = useIsMobile();
   const { toast } = useToast();
 
   const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
