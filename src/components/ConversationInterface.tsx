@@ -6,7 +6,7 @@ import { Card } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { useToast } from '@/components/ui/use-toast';
-import { Microphone, Send, Volume2 } from 'lucide-react';
+import { Mic, Send, Volume2 } from 'lucide-react';
 
 interface Message {
   id: string;
@@ -175,7 +175,7 @@ export default function ConversationInterface() {
             className={isListening ? "animate-pulse bg-aiox-accent" : ""}
             onClick={handleVoiceInput}
           >
-            <Microphone className="h-4 w-4" />
+            <Mic className="h-4 w-4" />
             <span className="sr-only">Voice input</span>
           </Button>
           
