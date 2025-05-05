@@ -19,7 +19,7 @@ export default function ConversationInterface() {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      content: "Hello! I'm your cultural guide. How can I help you discover new places today?",
+      content: "Bonjour! Je suis votre guide culturel au Maroc. Comment puis-je vous aider à découvrir ce pays magnifique aujourd'hui?",
       sender: 'ai',
       timestamp: new Date(),
     },
@@ -45,11 +45,11 @@ export default function ConversationInterface() {
     // Simulate AI response
     setTimeout(() => {
       const responses = [
-        "That's a great question! The Louvre Museum was originally built as a fortress in the 12th century.",
-        "Notre-Dame Cathedral took nearly 200 years to build, starting in 1163.",
-        "I'd recommend visiting the Musée d'Orsay if you enjoy impressionist art!",
-        "The Eiffel Tower was built for the 1889 World's Fair and was initially criticized by many Parisians.",
-        "There are over 400 parks and gardens in Paris, covering more than 3,000 hectares."
+        "La médina de Fès est la plus grande zone urbaine sans voitures au monde, avec plus de 9000 rues étroites!",
+        "Le Maroc est connu comme le 'Royaume des contrastes' en raison de ses paysages variés, des montagnes aux déserts et plages.",
+        "Je vous recommande de visiter Chefchaouen, connue comme la 'ville bleue' pour ses bâtiments aux teintes azur!",
+        "Le thé à la menthe est une tradition marocaine importante. On le sert très sucré et il symbolise l'hospitalité.",
+        "Le Maroc compte quatre villes impériales historiques: Fès, Marrakech, Meknès et Rabat, chacune ayant été capitale."
       ];
       
       const aiResponse: Message = {
@@ -67,34 +67,34 @@ export default function ConversationInterface() {
     if (!('webkitSpeechRecognition' in window)) {
       toast({
         variant: "destructive",
-        title: "Not supported",
-        description: "Voice recognition is not supported in this browser.",
+        title: "Non supporté",
+        description: "La reconnaissance vocale n'est pas supportée dans ce navigateur.",
       });
       return;
     }
     
     setIsListening(true);
     toast({
-      title: "Listening...",
-      description: "Say something about what you'd like to discover.",
+      title: "Écoute en cours...",
+      description: "Dites ce que vous souhaitez découvrir au Maroc.",
     });
     
     // Simulate voice recognition (in a real app, this would use the Web Speech API)
     setTimeout(() => {
       setIsListening(false);
       const fakeVoiceInputs = [
-        "Tell me about the Louvre Museum",
-        "What's the history of Notre-Dame?",
-        "What museums should I visit in Paris?",
-        "Facts about the Eiffel Tower",
-        "Where are the best parks in Paris?"
+        "Parlez-moi de la médina de Fès",
+        "Quelles sont les spécialités culinaires marocaines?",
+        "Que visiter à Marrakech?",
+        "Raconte-moi l'histoire de Chefchaouen",
+        "Quelles sont les meilleures plages du Maroc?"
       ];
       
       const randomInput = fakeVoiceInputs[Math.floor(Math.random() * fakeVoiceInputs.length)];
       setUserInput(randomInput);
       
       toast({
-        title: "Voice captured",
+        title: "Texte capturé",
         description: `"${randomInput}"`,
       });
     }, 2000);
@@ -103,8 +103,8 @@ export default function ConversationInterface() {
   const handleTextToSpeech = (text: string) => {
     // In a real app, this would use a Text-to-Speech API
     toast({
-      title: "Text-to-Speech",
-      description: "Speaking the response... (simulated)",
+      title: "Synthèse vocale",
+      description: "Lecture de la réponse... (simulée)",
     });
     
     console.log("Speaking:", text);
@@ -124,8 +124,8 @@ export default function ConversationInterface() {
   return (
     <Card className="border shadow-sm flex flex-col h-[500px] max-h-[80vh]">
       <div className="p-3 border-b">
-        <h3 className="text-lg font-medium">AIOX Cultural Guide</h3>
-        <p className="text-sm text-muted-foreground">Ask about any cultural landmark or history</p>
+        <h3 className="text-lg font-medium">Guide Culturel Marocain</h3>
+        <p className="text-sm text-muted-foreground">Posez des questions sur les sites culturels, l'histoire ou les traditions</p>
       </div>
       
       <ScrollArea className="flex-1 p-4">
@@ -156,7 +156,7 @@ export default function ConversationInterface() {
                       onClick={() => handleTextToSpeech(msg.content)}
                     >
                       <Volume2 className="h-3 w-3" />
-                      <span className="sr-only">Text to speech</span>
+                      <span className="sr-only">Synthèse vocale</span>
                     </Button>
                   )}
                 </div>
@@ -176,11 +176,11 @@ export default function ConversationInterface() {
             onClick={handleVoiceInput}
           >
             <Mic className="h-4 w-4" />
-            <span className="sr-only">Voice input</span>
+            <span className="sr-only">Entrée vocale</span>
           </Button>
           
           <Input
-            placeholder="Ask about any cultural landmark..."
+            placeholder="Posez une question sur le Maroc..."
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
             onKeyPress={handleKeyPress}
@@ -189,7 +189,7 @@ export default function ConversationInterface() {
           
           <Button onClick={handleSendMessage} disabled={!userInput.trim()}>
             <Send className="h-4 w-4" />
-            <span className="sr-only">Send message</span>
+            <span className="sr-only">Envoyer message</span>
           </Button>
         </div>
       </div>

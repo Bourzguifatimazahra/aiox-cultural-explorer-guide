@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, MapPin } from 'lucide-react';
+import { ArrowRight, MapPin, Book, Route } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -11,71 +11,71 @@ import FeaturedPlace from '@/components/FeaturedPlace';
 import MapView from '@/components/MapView';
 import ConversationInterface from '@/components/ConversationInterface';
 
-// Sample data for featured places
+// Sample data for featured places (now with Moroccan locations)
 const featuredPlaces = [
   {
     id: 1,
-    title: 'Louvre Museum',
-    description: 'Home to thousands of classic and modern masterpieces, including the Mona Lisa.',
-    image: 'https://images.unsplash.com/photo-1565099324218-40a2ea5a3af7?q=80&w=1000&auto=format&fit=crop',
-    category: 'Museum'
+    title: 'Médina de Fès',
+    description: 'La plus ancienne médina du monde et site du patrimoine mondial de l\'UNESCO avec ses 9000 ruelles.',
+    image: 'https://images.unsplash.com/photo-1548784561-97482ebf4d25?q=80&w=1000&auto=format&fit=crop',
+    category: 'Patrimoine'
   },
   {
     id: 2,
-    title: 'Notre-Dame Cathedral',
-    description: 'A masterpiece of French Gothic architecture and one of Paris\'s most visited monuments.',
-    image: 'https://images.unsplash.com/photo-1478391679764-b2d8b3cd1e94?q=80&w=1000&auto=format&fit=crop',
-    category: 'Historical'
+    title: 'Chefchaouen',
+    description: 'La célèbre "ville bleue" du Maroc, connue pour ses bâtiments aux teintes bleu azur distinctives.',
+    image: 'https://images.unsplash.com/photo-1560968245-c516421c5c6c?q=80&w=1000&auto=format&fit=crop',
+    category: 'Ville'
   },
   {
     id: 3,
-    title: 'Eiffel Tower',
-    description: 'The most famous symbol of Paris, offering stunning views over the city.',
-    image: 'https://images.unsplash.com/photo-1543349689-9a4d426bee8e?q=80&w=1000&auto=format&fit=crop',
-    category: 'Landmark'
+    title: 'Désert du Sahara',
+    description: 'Explorez les majestueuses dunes de sable d\'Erg Chebbi et vivez une nuit sous les étoiles.',
+    image: 'https://images.unsplash.com/photo-1518075770597-8222b088fad4?q=80&w=1000&auto=format&fit=crop',
+    category: 'Nature'
   },
   {
     id: 4,
-    title: 'Montmartre',
-    description: 'A hill in Paris known for its artistic history and the white-domed Sacré-Cœur Basilica.',
-    image: 'https://images.unsplash.com/photo-1551634979-2b11f8c946fe?q=80&w=1000&auto=format&fit=crop',
-    category: 'District'
+    title: 'Place Jemaa el-Fna',
+    description: 'Le cœur battant de Marrakech, rempli de conteurs, de musiciens et de stands de nourriture.',
+    image: 'https://images.unsplash.com/photo-1551621955-fa07dab27d08?q=80&w=1000&auto=format&fit=crop',
+    category: 'Culture'
   }
 ];
 
-// Sample POI data for map
+// Sample POI data for map (Moroccan locations)
 const pointsOfInterest = [
   {
     id: 1,
-    name: 'Louvre Museum',
-    latitude: 48.8606,
-    longitude: 2.3376,
-    category: 'Museum',
-    description: 'The world\'s largest art museum and historic monument in Paris.'
+    name: 'Médina de Fès',
+    latitude: 34.0372,
+    longitude: -5.0063,
+    category: 'Patrimoine',
+    description: 'La plus ancienne médina du monde avec 9000 ruelles et site de l\'UNESCO.'
   },
   {
     id: 2,
-    name: 'Notre-Dame Cathedral',
-    latitude: 48.8530,
-    longitude: 2.3499,
-    category: 'Historical',
-    description: 'Medieval Catholic cathedral on the Île de la Cité.'
+    name: 'Chefchaouen',
+    latitude: 35.1688,
+    longitude: -5.2636,
+    category: 'Ville',
+    description: 'La ville bleue du Maroc, connue pour ses bâtiments aux teintes bleues.'
   },
   {
     id: 3,
-    name: 'Eiffel Tower',
-    latitude: 48.8584,
-    longitude: 2.2945,
-    category: 'Landmark',
-    description: 'Wrought-iron lattice tower named after engineer Gustave Eiffel.'
+    name: 'Désert du Sahara (Merzouga)',
+    latitude: 31.1000,
+    longitude: -4.0100,
+    category: 'Nature',
+    description: 'Dunes spectaculaires et expériences authentiques dans le désert.'
   },
   {
     id: 4,
-    name: 'Montmartre',
-    latitude: 48.8867,
-    longitude: 2.3431,
-    category: 'District',
-    description: 'A large hill in Paris\'s 18th arrondissement, known for its artistic history.'
+    name: 'Place Jemaa el-Fna',
+    latitude: 31.6258,
+    longitude: -7.9891,
+    category: 'Culture',
+    description: 'Place animée au cœur de Marrakech, pleine de vie et de traditions.'
   }
 ];
 
@@ -91,20 +91,23 @@ export default function Index() {
         <section className="relative py-12 px-4 mb-12 rounded-lg bg-gradient-to-br from-aiox-primary/10 to-aiox-secondary/10 overflow-hidden">
           <div className="max-w-3xl">
             <h1 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-              Discover Culture Through <span className="text-aiox-primary">Conversation</span>
+              Découvrez le <span className="text-aiox-primary">Maroc</span> à travers nos conversations
             </h1>
             <p className="text-muted-foreground text-lg mb-6">
-              Explore the world's cultural landmarks with an AI guide that talks to you about the history, art, and stories behind them.
+              Explorez les merveilles culturelles du Maroc avec un guide AI qui vous parle de l'histoire, de l'art et des histoires qui les entourent.
             </p>
             <div className="flex flex-wrap gap-4">
               <Button size="lg" asChild className="bg-aiox-primary hover:bg-aiox-primary/90">
                 <Link to="/explore">
                   <MapPin className="mr-2 h-5 w-5" />
-                  Start Exploring
+                  Commencer l'Exploration
                 </Link>
               </Button>
               <Button variant="outline" size="lg" asChild>
-                <Link to="/profile">Create Account</Link>
+                <Link to="/travel-plan">
+                  <Route className="mr-2 h-5 w-5" />
+                  Créer un Itinéraire
+                </Link>
               </Button>
             </div>
           </div>
@@ -114,21 +117,69 @@ export default function Index() {
           </div>
         </section>
         
+        {/* Featured services */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          <Card>
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-aiox-primary/10 flex items-center justify-center mb-4">
+                <MapPin className="h-6 w-6 text-aiox-primary" />
+              </div>
+              <h3 className="text-lg font-medium mb-2">Explorer le Maroc</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Découvrez les sites culturels, historiques et naturels incontournables du Maroc.
+              </p>
+              <Button variant="outline" asChild className="mt-auto">
+                <Link to="/explore">Découvrir</Link>
+              </Button>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-aiox-primary/10 flex items-center justify-center mb-4">
+                <Route className="h-6 w-6 text-aiox-primary" />
+              </div>
+              <h3 className="text-lg font-medium mb-2">Plan de Voyage</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Créez votre itinéraire personnalisé avec notre planificateur intelligent.
+              </p>
+              <Button variant="outline" asChild className="mt-auto">
+                <Link to="/travel-plan">Planifier</Link>
+              </Button>
+            </CardContent>
+          </Card>
+          
+          <Card>
+            <CardContent className="p-6 flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-aiox-primary/10 flex items-center justify-center mb-4">
+                <Book className="h-6 w-6 text-aiox-primary" />
+              </div>
+              <h3 className="text-lg font-medium mb-2">Blog & Articles</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                Lisez et partagez des expériences, conseils et histoires sur le Maroc.
+              </p>
+              <Button variant="outline" asChild className="mt-auto">
+                <Link to="/blog">Lire & Partager</Link>
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+        
         {/* Main Content Tabs */}
         <Tabs defaultValue="discover" className="mb-12">
           <TabsList className="mb-8">
-            <TabsTrigger value="discover">Discover</TabsTrigger>
-            <TabsTrigger value="map">Interactive Map</TabsTrigger>
-            <TabsTrigger value="assistant">AI Assistant</TabsTrigger>
+            <TabsTrigger value="discover">Découvrir</TabsTrigger>
+            <TabsTrigger value="map">Carte Interactive</TabsTrigger>
+            <TabsTrigger value="assistant">Assistant AI</TabsTrigger>
           </TabsList>
           
           <TabsContent value="discover">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">Featured Cultural Sites</h2>
+                <h2 className="text-2xl font-bold">Sites Culturels Populaires</h2>
                 <Button variant="ghost" asChild>
                   <Link to="/explore" className="flex items-center">
-                    View All
+                    Voir Tout
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
@@ -140,27 +191,41 @@ export default function Index() {
                 ))}
               </div>
               
-              <Card className="mt-12 border-dashed bg-muted/50">
-                <CardContent className="flex flex-col items-center justify-center p-6 text-center">
-                  <h3 className="text-xl font-semibold mb-2">Personalized Cultural Journeys</h3>
-                  <p className="text-muted-foreground mb-4">
-                    Create an account to save your favorite places and get personalized recommendations based on your interests.
-                  </p>
-                  <Button variant="outline" asChild>
-                    <Link to="/profile">Sign Up Now</Link>
-                  </Button>
-                </CardContent>
-              </Card>
+              <div className="flex flex-col sm:flex-row gap-6 mt-12">
+                <Card className="flex-1 border-dashed bg-muted/50">
+                  <CardContent className="flex flex-col items-center justify-center p-6 text-center">
+                    <h3 className="text-xl font-semibold mb-2">Plan de Voyage Personnalisé</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Créez votre itinéraire sur mesure et découvrez le Maroc à votre rythme.
+                    </p>
+                    <Button variant="outline" asChild>
+                      <Link to="/travel-plan">Créer Mon Itinéraire</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+                
+                <Card className="flex-1 border-dashed bg-muted/50">
+                  <CardContent className="flex flex-col items-center justify-center p-6 text-center">
+                    <h3 className="text-xl font-semibold mb-2">Blog & Communauté</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Partagez vos expériences ou découvrez les récits d'autres voyageurs.
+                    </p>
+                    <Button variant="outline" asChild>
+                      <Link to="/blog">Explorer le Blog</Link>
+                    </Button>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </TabsContent>
           
           <TabsContent value="map">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">Explore Cultural Map</h2>
+                <h2 className="text-2xl font-bold">Explorer la Carte du Maroc</h2>
                 <Button variant="ghost" asChild>
                   <Link to="/explore" className="flex items-center">
-                    Full Screen Map
+                    Carte Plein Écran
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
@@ -178,16 +243,16 @@ export default function Index() {
                           <h3 className="text-lg font-medium mb-2">{selectedPoi.name}</h3>
                           <p className="text-sm text-muted-foreground mb-4">{selectedPoi.description}</p>
                           <div className="flex gap-2 mt-auto">
-                            <Button size="sm">Get Details</Button>
-                            <Button variant="outline" size="sm">Directions</Button>
+                            <Button size="sm">Détails</Button>
+                            <Button variant="outline" size="sm">Itinéraire</Button>
                           </div>
                         </div>
                       ) : (
                         <div className="h-full flex flex-col items-center justify-center text-center">
                           <MapPin className="h-12 w-12 text-muted-foreground mb-4 opacity-50" />
-                          <h3 className="text-lg font-medium mb-1">Select a Location</h3>
+                          <h3 className="text-lg font-medium mb-1">Sélectionnez un Lieu</h3>
                           <p className="text-sm text-muted-foreground">
-                            Click on any point of interest on the map to see details
+                            Cliquez sur un point d'intérêt sur la carte pour voir les détails
                           </p>
                         </div>
                       )}
@@ -201,10 +266,10 @@ export default function Index() {
           <TabsContent value="assistant">
             <div>
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-2xl font-bold">AI Cultural Assistant</h2>
+                <h2 className="text-2xl font-bold">Assistant Culturel Marocain</h2>
                 <Button variant="ghost" asChild>
                   <Link to="/search" className="flex items-center">
-                    Advanced Search
+                    Recherche Avancée
                     <ArrowRight className="ml-1 h-4 w-4" />
                   </Link>
                 </Button>
@@ -217,27 +282,27 @@ export default function Index() {
                 <div className="lg:col-span-2">
                   <Card className="h-full">
                     <CardContent className="p-6">
-                      <h3 className="text-lg font-medium mb-4">Suggested Questions</h3>
+                      <h3 className="text-lg font-medium mb-4">Questions Suggérées</h3>
                       
                       <div className="space-y-3">
                         <Button variant="outline" className="w-full justify-start h-auto py-3 text-left">
-                          What's the history of the Louvre Museum?
+                          Quelles sont les spécialités culinaires marocaines?
                         </Button>
                         <Button variant="outline" className="w-full justify-start h-auto py-3 text-left">
-                          Tell me about Parisian architecture styles
+                          Parlez-moi de l'histoire de la ville de Fès
                         </Button>
                         <Button variant="outline" className="w-full justify-start h-auto py-3 text-left">
-                          What museums should I visit with kids?
+                          Quels sont les meilleurs souks à visiter à Marrakech?
                         </Button>
                         <Button variant="outline" className="w-full justify-start h-auto py-3 text-left">
-                          Famous artworks I shouldn't miss in Paris
+                          Comment se déroule une cérémonie de thé traditionnelle?
                         </Button>
                       </div>
                       
                       <div className="mt-6 pt-6 border-t">
-                        <h4 className="font-medium mb-3">Voice Commands</h4>
+                        <h4 className="font-medium mb-3">Commandes Vocales</h4>
                         <p className="text-sm text-muted-foreground mb-3">
-                          You can also speak to the assistant using voice commands. Click the microphone button to try it out.
+                          Vous pouvez également parler à l'assistant en utilisant des commandes vocales. Cliquez sur le bouton microphone pour essayer.
                         </p>
                       </div>
                     </CardContent>
