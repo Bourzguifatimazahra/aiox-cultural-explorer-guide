@@ -23,7 +23,7 @@ const featuredPlaces = [
   {
     id: 2,
     title: 'Notre-Dame Cathedral',
-    description: 'A masterpiece of French Gothic architecture and one of Paris's most visited monuments.',
+    description: 'A masterpiece of French Gothic architecture and one of Paris\'s most visited monuments.',
     image: 'https://images.unsplash.com/photo-1478391679764-b2d8b3cd1e94?q=80&w=1000&auto=format&fit=crop',
     category: 'Historical'
   },
