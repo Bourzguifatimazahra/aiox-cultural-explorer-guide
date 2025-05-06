@@ -1,73 +1,81 @@
-# Welcome to your Lovable project
 
-## Project info
+# AIOX Explorer - Guide Culturel du Maroc
 
-**URL**: https://lovable.dev/projects/e42ab9ba-3615-467a-aee2-0c67c0d88c67
+## À propos du projet
 
-## How can I edit this code?
+AIOX Explorer est une application web qui permet aux utilisateurs de découvrir le riche patrimoine culturel du Maroc. Notre plateforme offre:
 
-There are several ways of editing your application.
+- **Exploration culturelle**: Découvrez les sites historiques, les traditions et la cuisine marocaine
+- **Planification de voyage personnalisée**: Créez des itinéraires sur mesure pour votre visite au Maroc
+- **Blog & Articles**: Accédez à des contenus riches sur la culture marocaine
+- **Interface interactive**: Navigation intuitive et responsive pour tous les appareils
 
-**Use Lovable**
+## Fonctionnalités principales
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e42ab9ba-3615-467a-aee2-0c67c0d88c67) and start prompting.
+- 🗺️ **Exploration géographique**: Carte interactive des lieux culturels 
+- 🧳 **Plan de voyage**: Création d'itinéraires personnalisés
+- 📝 **Blog**: Articles sur la culture, l'histoire et les traditions marocaines
+- 👤 **Profil utilisateur**: Espace personnel pour sauvegarder vos favoris
+- 🔍 **Recherche avancée**: Trouvez rapidement des informations spécifiques
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies utilisées
 
-**Use your preferred IDE**
+Ce projet est construit avec:
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Vite**: Environnement de développement rapide
+- **TypeScript**: Typage statique pour plus de robustesse
+- **React**: Bibliothèque UI pour construire des interfaces utilisateur
+- **shadcn-ui**: Composants UI personnalisables et accessibles
+- **Tailwind CSS**: Framework CSS utilitaire pour un design responsive
+- **React Router**: Navigation entre les pages
+- **Tanstack Query**: Gestion des requêtes de données
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Comment exécuter le projet localement
 
-Follow these steps:
+Prérequis: Node.js & npm doivent être installés - [installer avec nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Étape 1: Cloner le dépôt
+git clone <URL_DU_PROJET_GIT>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Étape 2: Naviguer vers le répertoire du projet
+cd aiox-explorer
 
-# Step 3: Install the necessary dependencies.
+# Étape 3: Installer les dépendances nécessaires
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Étape 4: Démarrer le serveur de développement
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Déploiement
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Pour déployer ce projet:
 
-**Use GitHub Codespaces**
+1. Ouvrez [Lovable](https://lovable.dev/projects/e42ab9ba-3615-467a-aee2-0c67c0d88c67)
+2. Cliquez sur Partager -> Publier
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Structure du projet
 
-## What technologies are used for this project?
+```
+src/
+├── components/      # Composants UI réutilisables
+├── hooks/           # Hooks personnalisés React
+├── lib/             # Utilitaires et fonctions d'aide
+├── pages/           # Composants de page pour chaque route
+└── main.tsx         # Point d'entrée de l'application
+```
 
-This project is built with:
+## Personnalisation du domaine
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Vous pouvez connecter un domaine personnalisé à votre projet Lovable:
 
-## How can I deploy this project?
+1. Accédez à Projet > Paramètres > Domaines
+2. Cliquez sur Connecter un Domaine
+3. Suivez les instructions pour configurer votre domaine personnalisé
 
-Simply open [Lovable](https://lovable.dev/projects/e42ab9ba-3615-467a-aee2-0c67c0d88c67) and click on Share -> Publish.
+Pour plus d'informations: [Configuration d'un domaine personnalisé](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
 
-## Can I connect a custom domain to my Lovable project?
+## Licence
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Ce projet est sous licence MIT.
