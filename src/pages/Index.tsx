@@ -17,28 +17,28 @@ const featuredPlaces = [
     id: 1,
     title: 'Médina de Fès',
     description: 'La plus ancienne médina du monde et site du patrimoine mondial de l\'UNESCO avec ses 9000 ruelles.',
-    image: 'https://images.unsplash.com/photo-1548784561-97482ebf4d25?q=80&w=1000&auto=format&fit=crop',
+    image: '/img/fes.png',
     category: 'Patrimoine'
   },
   {
     id: 2,
     title: 'Chefchaouen',
     description: 'La célèbre "ville bleue" du Maroc, connue pour ses bâtiments aux teintes bleu azur distinctives.',
-    image: 'https://images.unsplash.com/photo-1560968245-c516421c5c6c?q=80&w=1000&auto=format&fit=crop',
+    image: '/img/Chefch.jpg',
     category: 'Ville'
   },
   {
     id: 3,
     title: 'Désert du Sahara',
     description: 'Explorez les majestueuses dunes de sable d\'Erg Chebbi et vivez une nuit sous les étoiles.',
-    image: 'https://images.unsplash.com/photo-1518075770597-8222b088fad4?q=80&w=1000&auto=format&fit=crop',
+    image: '/img/marzoga.jpg',
     category: 'Nature'
   },
   {
     id: 4,
     title: 'Place Jemaa el-Fna',
     description: 'Le cœur battant de Marrakech, rempli de conteurs, de musiciens et de stands de nourriture.',
-    image: 'https://images.unsplash.com/photo-1551621955-fa07dab27d08?q=80&w=1000&auto=format&fit=crop',
+    image: '/img/kech.jpg',
     category: 'Culture'
   }
 ];

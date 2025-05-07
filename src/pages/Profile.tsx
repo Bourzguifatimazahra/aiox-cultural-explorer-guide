@@ -14,13 +14,13 @@ export default function Profile() {
   
   // Simulated user data - in a real app, this would come from your authentication system
   const userData = {
-    name: "Sophie Martin",
-    email: "sophie.martin@example.com",
+    name: "Bourzgui Fatima zahra",
+    email: "bourzguifatimazahra@example.com",
     joined: "April 2025",
     language: "English",
     interests: ["Museums", "Architecture", "Modern Art"],
     savedLocations: [
-      { id: 1, name: "Louvre Museum", date: "2025-05-02" },
+      { id: 1, name: "Hassan 2", date: "2025-05-02" },
       { id: 3, name: "Eiffel Tower", date: "2025-05-01" },
       { id: 5, name: "Musée d'Orsay", date: "2025-04-28" },
     ]

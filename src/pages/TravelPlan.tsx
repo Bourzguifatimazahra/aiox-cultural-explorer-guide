@@ -28,42 +28,42 @@ const moroccanDestinations = [
   {
     id: 1,
     name: "Marrakech",
-    image: "https://images.unsplash.com/photo-1597212618440-806262de4f9c?q=80&w=1000&auto=format&fit=crop",
+    image: "/img/kech.jpg",
     description: "The cultural heart of Morocco with its famous Jemaa el-Fnaa square, historic medina, and vibrant souks.",
     activities: ["Visit Majorelle Garden", "Explore the Medina", "Shop in the Souks", "Visit Bahia Palace"]
   },
   {
     id: 2,
     name: "Chefchaouen",
-    image: "https://images.unsplash.com/photo-1553292259-fa7b3a21c7c4?q=80&w=1000&auto=format&fit=crop",
+    image: "/img/Chefch.jpg",
     description: "The famous 'Blue City' nestled in the Rif Mountains, known for its striking blue-washed buildings.",
     activities: ["Photograph the Blue Streets", "Hike to the Spanish Mosque", "Visit Kasbah Museum", "Shop for Local Crafts"]
   },
   {
     id: 3,
     name: "Fès",
-    image: "https://images.unsplash.com/photo-1553106785-391fcd1a8fc3?q=80&w=1000&auto=format&fit=crop",
+    image: "/img/fes.png",
     description: "Home to the world's oldest university and the largest car-free urban area with its ancient medina.",
     activities: ["Explore Fès el-Bali Medina", "Visit Al-Qarawiyyin University", "See the Leather Tanneries", "Tour Bou Inania Madrasa"]
   },
   {
     id: 4,
     name: "Sahara Desert",
-    image: "https://images.unsplash.com/photo-1555834415-796887c7e875?q=80&w=1000&auto=format&fit=crop",
+    image: "/img/Sahara.jpg",
     description: "Experience the majestic sand dunes of Erg Chebbi and Erg Chigaga in the Moroccan Sahara.",
     activities: ["Camel Trek at Sunset", "Camp Under the Stars", "Sandboarding", "Visit Berber Villages"]
   },
   {
     id: 5,
     name: "Essaouira",
-    image: "https://images.unsplash.com/photo-1560607809-6af697b5bccb?q=80&w=1000&auto=format&fit=crop",
+    image: "/img/essouira.jpg",
     description: "A charming coastal town known for its windswept beaches, historic medina, and fresh seafood.",
     activities: ["Walk the Ramparts", "Windsurf or Kiteboard", "Explore the Medina", "Visit the Port"]
   },
   {
     id: 6,
     name: "Atlas Mountains",
-    image: "https://images.unsplash.com/photo-1527845322508-e8815a092052?q=80&w=1000&auto=format&fit=crop",
+    image: "/img/atls.jpg",
     description: "North Africa's highest mountain range offering spectacular hiking and traditional Berber villages.",
     activities: ["Hike to Toubkal Peak", "Visit Berber Villages", "Explore Ouzoud Waterfalls", "Trek Through Valleys"]
   }

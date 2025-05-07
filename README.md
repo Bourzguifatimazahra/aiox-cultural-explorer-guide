@@ -30,13 +30,9 @@ Ce projet est construit avec:
 - **React Router**: Navigation entre les pages
 - **Tanstack Query**: Gestion des requêtes de données
 
-## Comment exécuter le projet localement
-
-Prérequis: Node.js & npm doivent être installés - [installer avec nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
 ```sh
 # Étape 1: Cloner le dépôt
-git clone <URL_DU_PROJET_GIT>
+git clone  
 
 # Étape 2: Naviguer vers le répertoire du projet
 cd aiox-explorer
@@ -48,13 +44,6 @@ npm i
 npm run dev
 ```
 
-## Déploiement
-
-Pour déployer ce projet:
-
-1. Ouvrez [Lovable](https://lovable.dev/projects/e42ab9ba-3615-467a-aee2-0c67c0d88c67)
-2. Cliquez sur Partager -> Publier
-
 ## Structure du projet
 
 ```
@@ -65,17 +54,7 @@ src/
 ├── pages/           # Composants de page pour chaque route
 └── main.tsx         # Point d'entrée de l'application
 ```
-
-## Personnalisation du domaine
-
-Vous pouvez connecter un domaine personnalisé à votre projet Lovable:
-
-1. Accédez à Projet > Paramètres > Domaines
-2. Cliquez sur Connecter un Domaine
-3. Suivez les instructions pour configurer votre domaine personnalisé
-
-Pour plus d'informations: [Configuration d'un domaine personnalisé](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
-
+ 
 ## Licence
 
 Ce projet est sous licence MIT.
