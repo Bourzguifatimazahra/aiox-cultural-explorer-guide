@@ -36,7 +36,7 @@ export default function FeaturedPlace({ id, title, description, image, category 
       </CardContent>
       <CardFooter className="p-4 pt-0 flex justify-end">
         <Button variant="ghost" size="sm" className="text-aiox-primary" asChild>
-          <Link to={`/poi/${id}`}>
+          <Link to={`#${id}`}>
             Discover
             <ArrowRight className="ml-1 h-4 w-4" />
           </Link>
